@@ -19,21 +19,20 @@ public class Main {
     // printFileContent that prints it s content otherwise print 'file not found :/'
     // todo : implement the methods and force exception handling in the printFile method
 
-    private static String getFileContent(String fileName) {
-        //use the line below if you're a linux user
-        //File file = new File("src/tp2/magicFile/" + fileName);
-
-        //use the line below if you're a windows user
-        File file = new File("src\\tp2\\magicFile\\" + fileName);
-
-        //the lines below help you to get the content
-//        Scanner reader = new Scanner(file);
-//        String content = reader.nextLine();
-        return null;
+    private static String getFileContent(String fileName) throws FileNotFoundException {
+        File file = new File("C:\\Users\\MANNOU1\\Desktop\\3éme\\TP_DAR\\tp2\\magicFile\\" + fileName);
+        Scanner reader = new Scanner(file);
+        String content = reader.nextLine();
+        return content;
     }
 
-    private static void printFileContent(String fileName) {
-        String data = getFileContent(fileName);
-        System.out.println(data);
+   private static void printFileContent(String fileName) {
+        try {
+            String data = getFileContent(fileName);
+            System.out.println(data);
+        }
+        catch(FileNotFoundException e){
+            System.out.println("file not found");
+        }
     }
 }
