@@ -27,7 +27,7 @@ public class Main {
     }
 
    private static void printFileContent(String fileName) {
-        try {
+        try { 
             String data = getFileContent(fileName);
             System.out.println(data);
         }
